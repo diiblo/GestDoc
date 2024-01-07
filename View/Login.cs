@@ -28,24 +28,17 @@ namespace DelotransApp
             _controllerUser = new UserController();
         }
 
-        private void kryptonButtonConnexion_Click(object sender, EventArgs e)
-        {
-
-           
-
-            
-        }
         private void BtnConnecter_Click(object sender, EventArgs e)
         {
-            TextBoxIsEmpty(kryptonTextBoxEmail);
-            TextBoxIsEmpty(kryptonTextBoxMDP);
+            TextBoxIsEmpty(TextBoxEmail);
+            TextBoxIsEmpty(TextBoxPassword);
 
-            EstEmailValide(kryptonTextBoxEmail);
+            EstEmailValide(TextBoxEmail);
 
             if (_validate)
             {
-                string email = kryptonTextBoxEmail.Text.Trim();
-                string motdepasse = kryptonTextBoxMDP.Text.Trim();
+                string email = TextBoxEmail.Text.Trim();
+                string motdepasse = TextBoxPassword.Text.Trim();
                 UserModel user = _controllerUser.GetUserByEmail(email, motdepasse);
                 if (user == null)
                 {
@@ -78,22 +71,12 @@ namespace DelotransApp
 
         private void BtnInscrire_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void LabelForget_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void kryptonButtonInscription_Click(object sender, EventArgs e)
-        {
             Register register = new Register(this);
             register.Show();
             this.Hide();
         }
 
-        private void kryptonLabelForget_Click(object sender, EventArgs e)
+        private void LabelForget_Click(object sender, EventArgs e)
         {
             RecoverPassword recoverPassword = new RecoverPassword(this);
             recoverPassword.Show();

@@ -294,5 +294,13 @@ namespace DelotransApp.View
             }
         }
 
+        private void Register_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                _parentForm.Show();
+            }
+            
+        }
     }
 }

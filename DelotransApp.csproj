@@ -478,6 +478,12 @@
     <Compile Include="View\RegisterValidation.Designer.cs">
       <DependentUpon>RegisterValidation.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ValidatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ValidatePassword.Designer.cs">
+      <DependentUpon>ValidatePassword.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="View\gestion\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -504,6 +510,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\RegisterValidation.resx">
       <DependentUpon>RegisterValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ValidatePassword.resx">
+      <DependentUpon>ValidatePassword.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

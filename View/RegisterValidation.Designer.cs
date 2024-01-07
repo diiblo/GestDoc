@@ -31,12 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.kryptonPaletteValidation = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.kryptonLabelLoginPage = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonButtonValider = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.BtnValidation = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.kryptonTextBoxCode = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.kryptonButtonInscription = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.BtnResend = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.LabelTime = new System.Windows.Forms.Label();
+            this.TimerSendCode = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +89,7 @@
             // kryptonLabelLoginPage
             // 
             this.kryptonLabelLoginPage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kryptonLabelLoginPage.Location = new System.Drawing.Point(67, 236);
+            this.kryptonLabelLoginPage.Location = new System.Drawing.Point(35, 210);
             this.kryptonLabelLoginPage.Name = "kryptonLabelLoginPage";
             this.kryptonLabelLoginPage.Size = new System.Drawing.Size(215, 26);
             this.kryptonLabelLoginPage.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(94)))), ((int)(((byte)(155)))));
@@ -100,72 +102,72 @@
             this.kryptonLabelLoginPage.Values.Text = "Vous avez déjà un compte ?";
             this.kryptonLabelLoginPage.Click += new System.EventHandler(this.kryptonLabelLoginPage_Click);
             // 
-            // kryptonButtonValider
+            // BtnValidation
             // 
-            this.kryptonButtonValider.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kryptonButtonValider.Location = new System.Drawing.Point(67, 281);
-            this.kryptonButtonValider.Name = "kryptonButtonValider";
-            this.kryptonButtonValider.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.kryptonButtonValider.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(124)))), ((int)(((byte)(254)))));
-            this.kryptonButtonValider.OverrideDefault.Back.ColorAngle = 45F;
-            this.kryptonButtonValider.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.kryptonButtonValider.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.kryptonButtonValider.OverrideDefault.Border.ColorAngle = 45F;
-            this.kryptonButtonValider.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnValidation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnValidation.Location = new System.Drawing.Point(35, 265);
+            this.BtnValidation.Name = "BtnValidation";
+            this.BtnValidation.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.BtnValidation.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(124)))), ((int)(((byte)(254)))));
+            this.BtnValidation.OverrideDefault.Back.ColorAngle = 45F;
+            this.BtnValidation.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.BtnValidation.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.BtnValidation.OverrideDefault.Border.ColorAngle = 45F;
+            this.BtnValidation.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButtonValider.OverrideDefault.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonButtonValider.OverrideDefault.Border.Rounding = 20;
-            this.kryptonButtonValider.OverrideDefault.Border.Width = 1;
-            this.kryptonButtonValider.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kryptonButtonValider.Size = new System.Drawing.Size(136, 43);
-            this.kryptonButtonValider.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(94)))), ((int)(((byte)(155)))));
-            this.kryptonButtonValider.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(94)))), ((int)(((byte)(155)))));
-            this.kryptonButtonValider.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.kryptonButtonValider.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.kryptonButtonValider.StateCommon.Border.ColorAngle = 45F;
-            this.kryptonButtonValider.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnValidation.OverrideDefault.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnValidation.OverrideDefault.Border.Rounding = 20;
+            this.BtnValidation.OverrideDefault.Border.Width = 1;
+            this.BtnValidation.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.BtnValidation.Size = new System.Drawing.Size(136, 43);
+            this.BtnValidation.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(89)))), ((int)(((byte)(178)))));
+            this.BtnValidation.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(89)))), ((int)(((byte)(178)))));
+            this.BtnValidation.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.BtnValidation.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.BtnValidation.StateCommon.Border.ColorAngle = 45F;
+            this.BtnValidation.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButtonValider.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonButtonValider.StateCommon.Border.Rounding = 20;
-            this.kryptonButtonValider.StateCommon.Border.Width = 1;
-            this.kryptonButtonValider.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.kryptonButtonValider.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.kryptonButtonValider.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonButtonValider.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(145)))), ((int)(((byte)(198)))));
-            this.kryptonButtonValider.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(206)))));
-            this.kryptonButtonValider.StatePressed.Back.ColorAngle = 135F;
-            this.kryptonButtonValider.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(145)))), ((int)(((byte)(198)))));
-            this.kryptonButtonValider.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(206)))));
-            this.kryptonButtonValider.StatePressed.Border.ColorAngle = 135F;
-            this.kryptonButtonValider.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnValidation.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnValidation.StateCommon.Border.Rounding = 20;
+            this.BtnValidation.StateCommon.Border.Width = 1;
+            this.BtnValidation.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.BtnValidation.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.BtnValidation.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnValidation.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(145)))), ((int)(((byte)(198)))));
+            this.BtnValidation.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(206)))));
+            this.BtnValidation.StatePressed.Back.ColorAngle = 135F;
+            this.BtnValidation.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(145)))), ((int)(((byte)(198)))));
+            this.BtnValidation.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(206)))));
+            this.BtnValidation.StatePressed.Border.ColorAngle = 135F;
+            this.BtnValidation.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButtonValider.StatePressed.Border.Rounding = 20;
-            this.kryptonButtonValider.StatePressed.Border.Width = 1;
-            this.kryptonButtonValider.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.kryptonButtonValider.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.kryptonButtonValider.StateTracking.Back.ColorAngle = 45F;
-            this.kryptonButtonValider.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.kryptonButtonValider.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.kryptonButtonValider.StateTracking.Border.ColorAngle = 45F;
-            this.kryptonButtonValider.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnValidation.StatePressed.Border.Rounding = 20;
+            this.BtnValidation.StatePressed.Border.Width = 1;
+            this.BtnValidation.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.BtnValidation.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.BtnValidation.StateTracking.Back.ColorAngle = 45F;
+            this.BtnValidation.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.BtnValidation.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.BtnValidation.StateTracking.Border.ColorAngle = 45F;
+            this.BtnValidation.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButtonValider.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonButtonValider.StateTracking.Border.Rounding = 20;
-            this.kryptonButtonValider.StateTracking.Border.Width = 1;
-            this.kryptonButtonValider.TabIndex = 15;
-            this.kryptonButtonValider.Values.Text = "Valider";
-            this.kryptonButtonValider.Click += new System.EventHandler(this.kryptonButtonValider_Click);
+            this.BtnValidation.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnValidation.StateTracking.Border.Rounding = 20;
+            this.BtnValidation.StateTracking.Border.Width = 1;
+            this.BtnValidation.TabIndex = 15;
+            this.BtnValidation.Values.Text = "Valider";
+            this.BtnValidation.Click += new System.EventHandler(this.kryptonButtonValider_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(64, 166);
+            this.label2.Location = new System.Drawing.Point(32, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(387, 17);
             this.label2.TabIndex = 14;
@@ -176,7 +178,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(63, 126);
+            this.label1.Location = new System.Drawing.Point(31, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(327, 28);
             this.label1.TabIndex = 13;
@@ -184,7 +186,7 @@
             // 
             // kryptonTextBoxCode
             // 
-            this.kryptonTextBoxCode.Location = new System.Drawing.Point(67, 197);
+            this.kryptonTextBoxCode.Location = new System.Drawing.Point(35, 171);
             this.kryptonTextBoxCode.Name = "kryptonTextBoxCode";
             this.kryptonTextBoxCode.Size = new System.Drawing.Size(368, 33);
             this.kryptonTextBoxCode.StateCommon.Back.Color1 = System.Drawing.Color.White;
@@ -204,83 +206,101 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DelotransApp.Properties.Resources.undraw_Click_here;
-            this.pictureBox1.Location = new System.Drawing.Point(467, 89);
+            this.pictureBox1.Location = new System.Drawing.Point(435, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(321, 260);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // kryptonButtonInscription
+            // BtnResend
             // 
-            this.kryptonButtonInscription.Location = new System.Drawing.Point(235, 281);
-            this.kryptonButtonInscription.Name = "kryptonButtonInscription";
-            this.kryptonButtonInscription.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonButtonInscription.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonButtonInscription.OverrideDefault.Back.ColorAngle = 45F;
-            this.kryptonButtonInscription.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.kryptonButtonInscription.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.kryptonButtonInscription.OverrideDefault.Border.ColorAngle = 45F;
-            this.kryptonButtonInscription.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnResend.Enabled = false;
+            this.BtnResend.Location = new System.Drawing.Point(207, 265);
+            this.BtnResend.Name = "BtnResend";
+            this.BtnResend.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.BtnResend.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.BtnResend.OverrideDefault.Back.ColorAngle = 45F;
+            this.BtnResend.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.BtnResend.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.BtnResend.OverrideDefault.Border.ColorAngle = 45F;
+            this.BtnResend.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButtonInscription.OverrideDefault.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonButtonInscription.OverrideDefault.Border.Rounding = 20;
-            this.kryptonButtonInscription.OverrideDefault.Border.Width = 1;
-            this.kryptonButtonInscription.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kryptonButtonInscription.Size = new System.Drawing.Size(182, 43);
-            this.kryptonButtonInscription.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonButtonInscription.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonButtonInscription.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.kryptonButtonInscription.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.kryptonButtonInscription.StateCommon.Border.ColorAngle = 45F;
-            this.kryptonButtonInscription.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnResend.OverrideDefault.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnResend.OverrideDefault.Border.Rounding = 20;
+            this.BtnResend.OverrideDefault.Border.Width = 1;
+            this.BtnResend.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.BtnResend.Size = new System.Drawing.Size(182, 43);
+            this.BtnResend.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.BtnResend.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.BtnResend.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.BtnResend.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.BtnResend.StateCommon.Border.ColorAngle = 45F;
+            this.BtnResend.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButtonInscription.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonButtonInscription.StateCommon.Border.Rounding = 20;
-            this.kryptonButtonInscription.StateCommon.Border.Width = 1;
-            this.kryptonButtonInscription.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(94)))), ((int)(((byte)(155)))));
-            this.kryptonButtonInscription.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(94)))), ((int)(((byte)(155)))));
-            this.kryptonButtonInscription.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonButtonInscription.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(145)))), ((int)(((byte)(198)))));
-            this.kryptonButtonInscription.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(206)))));
-            this.kryptonButtonInscription.StatePressed.Back.ColorAngle = 135F;
-            this.kryptonButtonInscription.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(145)))), ((int)(((byte)(198)))));
-            this.kryptonButtonInscription.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(206)))));
-            this.kryptonButtonInscription.StatePressed.Border.ColorAngle = 135F;
-            this.kryptonButtonInscription.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnResend.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnResend.StateCommon.Border.Rounding = 20;
+            this.BtnResend.StateCommon.Border.Width = 1;
+            this.BtnResend.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(89)))), ((int)(((byte)(178)))));
+            this.BtnResend.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(89)))), ((int)(((byte)(178)))));
+            this.BtnResend.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnResend.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(145)))), ((int)(((byte)(198)))));
+            this.BtnResend.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(206)))));
+            this.BtnResend.StatePressed.Back.ColorAngle = 135F;
+            this.BtnResend.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(145)))), ((int)(((byte)(198)))));
+            this.BtnResend.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(206)))));
+            this.BtnResend.StatePressed.Border.ColorAngle = 135F;
+            this.BtnResend.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButtonInscription.StatePressed.Border.Rounding = 20;
-            this.kryptonButtonInscription.StatePressed.Border.Width = 1;
-            this.kryptonButtonInscription.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.kryptonButtonInscription.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.kryptonButtonInscription.StateTracking.Back.ColorAngle = 45F;
-            this.kryptonButtonInscription.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.kryptonButtonInscription.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.kryptonButtonInscription.StateTracking.Border.ColorAngle = 45F;
-            this.kryptonButtonInscription.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnResend.StatePressed.Border.Rounding = 20;
+            this.BtnResend.StatePressed.Border.Width = 1;
+            this.BtnResend.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.BtnResend.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.BtnResend.StateTracking.Back.ColorAngle = 45F;
+            this.BtnResend.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.BtnResend.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.BtnResend.StateTracking.Border.ColorAngle = 45F;
+            this.BtnResend.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButtonInscription.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonButtonInscription.StateTracking.Border.Rounding = 20;
-            this.kryptonButtonInscription.StateTracking.Border.Width = 1;
-            this.kryptonButtonInscription.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.kryptonButtonInscription.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.kryptonButtonInscription.TabIndex = 18;
-            this.kryptonButtonInscription.Values.Text = "Renvoyer le code ?";
+            this.BtnResend.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnResend.StateTracking.Border.Rounding = 20;
+            this.BtnResend.StateTracking.Border.Width = 1;
+            this.BtnResend.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.BtnResend.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.BtnResend.TabIndex = 18;
+            this.BtnResend.Values.Text = "Renvoyer le code ?";
+            this.BtnResend.Click += new System.EventHandler(this.BtnResend_Click);
+            // 
+            // LabelTime
+            // 
+            this.LabelTime.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTime.Location = new System.Drawing.Point(42, 239);
+            this.LabelTime.Name = "LabelTime";
+            this.LabelTime.Size = new System.Drawing.Size(26, 23);
+            this.LabelTime.TabIndex = 19;
+            this.LabelTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TimerSendCode
+            // 
+            this.TimerSendCode.Enabled = true;
+            this.TimerSendCode.Interval = 1000;
+            this.TimerSendCode.Tick += new System.EventHandler(this.TimerSendCode_Tick);
             // 
             // RegisterValidation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.kryptonButtonInscription);
+            this.ClientSize = new System.Drawing.Size(800, 407);
+            this.Controls.Add(this.LabelTime);
+            this.Controls.Add(this.BtnResend);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.kryptonLabelLoginPage);
-            this.Controls.Add(this.kryptonButtonValider);
+            this.Controls.Add(this.BtnValidation);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.kryptonTextBoxCode);
@@ -290,6 +310,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register Validation";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterValidation_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -301,10 +322,12 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPaletteValidation;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabelLoginPage;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButtonValider;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton BtnValidation;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBoxCode;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButtonInscription;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton BtnResend;
+        private System.Windows.Forms.Label LabelTime;
+        private System.Windows.Forms.Timer TimerSendCode;
     }
 }

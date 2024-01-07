@@ -252,6 +252,35 @@ namespace DelotransApp.DataAccess
             }
         }
 
+        public bool UpdateUserPassword(string email, string motdepasse)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = @"UPDATE Utilisateur 
+                                    SET emailVerifyCodeUser=@EmailVerifyCodeUser,
+                                        motdepasseUser=@MotdepasseUSer,
+                                        updatedAt=@UpdatedAt
+                                  WHERE emailUser=@EmailUser";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    cmd.Parameters.AddWithValue("@EmailVerifyCodeUser", 0);
+                    cmd.Parameters.AddWithValue("@MotdepasseUser", motdepasse);
+                    cmd.Parameters.AddWithValue("@EmailUser", email);
+                    cmd.Parameters.AddWithValue("@UpdatedAt", DateTime.Now);
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (MySqlException ex)
+                {
+                    throw new Exception("Erreur lors du changement de mot de passe.", ex);
+                }
+            }
+        }
+
 
 
         // Supprimer un utilisateur

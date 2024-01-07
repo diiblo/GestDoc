@@ -98,8 +98,8 @@
             this.kryptonPaletteLogin.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(252)))));
             this.kryptonPaletteLogin.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 10;
             this.kryptonPaletteLogin.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
-            this.kryptonPaletteLogin.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(128)))), ((int)(((byte)(168)))));
-            this.kryptonPaletteLogin.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(128)))), ((int)(((byte)(168)))));
+            this.kryptonPaletteLogin.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(89)))), ((int)(((byte)(178)))));
+            this.kryptonPaletteLogin.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(89)))), ((int)(((byte)(178)))));
             this.kryptonPaletteLogin.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // label1
@@ -221,7 +221,6 @@
             this.kryptonButtonConnexion.StateTracking.Border.Width = 1;
             this.kryptonButtonConnexion.TabIndex = 4;
             this.kryptonButtonConnexion.Values.Text = "Se connecter";
-            this.kryptonButtonConnexion.Click += new System.EventHandler(this.kryptonButtonConnexion_Click);
             // 
             // kryptonButtonInscription
             // 
@@ -282,7 +281,6 @@
             this.kryptonButtonInscription.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.kryptonButtonInscription.TabIndex = 5;
             this.kryptonButtonInscription.Values.Text = "S\'inscrire";
-            this.kryptonButtonInscription.Click += new System.EventHandler(this.kryptonButtonInscription_Click);
             // 
             // kryptonLabelForget
             // 
@@ -298,7 +296,6 @@
             this.kryptonLabelForget.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonLabelForget.TabIndex = 7;
             this.kryptonLabelForget.Values.Text = "Mot de passe oublié ?";
-            this.kryptonLabelForget.Click += new System.EventHandler(this.kryptonLabelForget_Click);
             // 
             // pictureBox1
             // 
@@ -530,6 +527,8 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.BtnInscrire.StatePressed.Border.Rounding = 20;
             this.BtnInscrire.StatePressed.Border.Width = 1;
+            this.BtnInscrire.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.BtnInscrire.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.BtnInscrire.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
             this.BtnInscrire.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.BtnInscrire.StateTracking.Back.ColorAngle = 45F;
@@ -580,8 +579,6 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(252)))));
-            this.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(252)))));
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

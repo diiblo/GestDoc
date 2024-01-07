@@ -71,11 +71,70 @@ namespace DelotransApp.Controller
             
         }
 
+        //Activer un utilisateur
         public bool ActivateUSer(UserModel user)
         {
             try
             {
                 _dataAccess.ActivateUser(user);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        //Changer de mot de passe
+        public bool UpdateUserPassword(string email, string password)
+        {
+            try
+            {
+                if (_dataAccess.UpdateUserPassword(email, password))
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+        // Check if user exist by email
+        public bool CheckIfUserExistByEmail(string email)
+        {
+            try
+            {
+
+                var user = _dataAccess.GetUserByEmail(email);
+                if (user != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        //Renvoyer le code de validation
+
+        public bool ResendActivation(UserModel user)
+        {
+            try
+            {
+                SendEmailConfirmation(user.EmailUser, user.EmailVerifyCodeUser);
                 return true;
             }
             catch (Exception)
@@ -98,7 +157,6 @@ namespace DelotransApp.Controller
         }
 
         //Récupérer un utilisateur par Email
-
         public UserModel GetUserByEmail(string email, string motdepasse)
         {
             var user = _dataAccess.GetUserByEmail(email);
@@ -114,7 +172,7 @@ namespace DelotransApp.Controller
         }
 
         // Autres méthodes de contrôleur si nécessaire
-        private bool SendEmailConfirmation(string userEmail, int code)
+        public bool SendEmailConfirmation(string userEmail, int code)
         {
             try
             {

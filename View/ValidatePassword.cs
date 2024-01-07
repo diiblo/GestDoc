@@ -5,92 +5,30 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using System.Windows.Forms;
 using DelotransApp.Controller;
-using DelotransApp.Model;
-using ReaLTaiizor.Forms;
 using RestSharp.Validation;
 
 namespace DelotransApp.View
 {
-    public partial class RegisterValidation : KryptonForm
+    public partial class ValidatePassword : KryptonForm
     {
-        private readonly UserModel _user;
+        private readonly UserController _userController;
         private readonly Login _parentForm;
-        private readonly UserController _controllerUser;
-        private int _countdown = 59;
+        private readonly string _email;
         private bool _validate = true;
-        public RegisterValidation(Login parentForm , UserModel user)
+        public ValidatePassword(Login parent ,string email)
         {
             InitializeComponent();
-            _user = user;
-            _parentForm = parentForm;
-            _controllerUser = new UserController();
-            kryptonTextBoxCode.KeyPress += KryptonTextBoxCode_KeyPress;
+            _email = email;
+            _userController = new UserController();
+            _parentForm = parent;
+            TextBoxCode.KeyPress += KryptonTextBoxCode_KeyPress;
         }
 
-        private void kryptonButtonValider_Click(object sender, EventArgs e)
-        {
-            TextBoxIsEmpty(kryptonTextBoxCode);
-            EstCodeValide(kryptonTextBoxCode);
-            if (_validate)
-            {
-                if (_user.EmailVerifyCodeUser == int.Parse(kryptonTextBoxCode.Text) && _controllerUser.ActivateUSer(_user))
-                {
-                    MessageAlert("Compte activé avec succès", false);
-                    _parentForm.Show();
-                    this.Close();
-                }
-                else
-                {
-                    MessageAlert("Le code ne correspond pas", true);
-                }
 
-
-            }
-            else
-            {
-                MessageAlert("Veuillez valider les champs en rouge",true);
-            }
-        }
-
-        private void kryptonLabelLoginPage_Click(object sender, EventArgs e)
-        {
-            _parentForm.Show();
-            this.Close();
-        }
-
-        private void TimerSendCode_Tick(object sender, EventArgs e)
-        {
-            LabelTime.Text = ':'+_countdown.ToString();
-
-            _countdown--;
-
-            if (_countdown <= 0)
-            {
-                BtnResend.Enabled = true;
-
-                TimerSendCode.Stop();
-            }
-        }
-
-        private void BtnResend_Click(object sender, EventArgs e)
-        {
-            if (_controllerUser.ResendActivation(_user))
-            {
-                MessageAlert("Le code à été renvoyé", false);
-                BtnResend.Enabled = false;
-                _countdown = 59;
-                TimerSendCode.Start();
-            }
-            else
-            {
-                MessageAlert("Une erreur c'est produite",true);
-            }
-        }
 
         private void KryptonTextBoxCode_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -102,7 +40,38 @@ namespace DelotransApp.View
             }
         }
 
-        private void RegisterValidation_FormClosing(object sender, FormClosingEventArgs e)
+        private void BtnValider_Click(object sender, EventArgs e)
+        {
+            TextBoxIsEmpty(TextBoxCode);
+            TextBoxIsEmpty(TextBoxPassword);
+            TextBoxIsEmpty(TextBoxRepeatPassword);
+
+            EstCodeValide(TextBoxCode);
+            SiMotDePasseSimilaire(TextBoxPassword, TextBoxRepeatPassword);
+
+            if (_validate)
+            {
+                string motdepasse = BCrypt.Net.BCrypt.HashPassword(TextBoxPassword.Text.Trim());
+
+                if (_userController.UpdateUserPassword(_email, motdepasse))
+                {
+                    MessageAlert("Mot de passe modifié avec succès", false);
+                    this.Close();
+                }
+                else
+                {
+                    MessageAlert("Une erreur est survenue, sans doute un problème de connexion", true);
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageAlert("Veillez remplir les champs en rouge", true);
+            }
+
+        }
+
+        private void ValidatePassword_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -173,6 +142,36 @@ namespace DelotransApp.View
                 _validate = false;
                 MessageBox.Show($"Une erreur s'est produite : {ex.Message}");
             }
+        }
+
+        private void SiMotDePasseSimilaire(KryptonTextBox motdepasse, KryptonTextBox repeat)
+        {
+            string MotdePasse = motdepasse.Text.Trim();
+            string Repeat = repeat.Text.Trim();
+
+            if (!TextBoxIsEmpty(motdepasse) && !TextBoxIsEmpty(repeat))
+            {
+                motdepasse.StateCommon.Border.Color1 = Color.FromArgb(224, 224, 224);
+                motdepasse.StateCommon.Border.Color1 = Color.FromArgb(224, 224, 224);
+
+                repeat.StateCommon.Border.Color1 = Color.FromArgb(224, 224, 224);
+                repeat.StateCommon.Border.Color1 = Color.FromArgb(224, 224, 224);
+
+                _validate = true;
+            }
+            else
+            {
+                motdepasse.StateCommon.Border.Color1 = Color.FromArgb(231, 41, 58);
+                motdepasse.StateCommon.Border.Color2 = Color.FromArgb(231, 41, 58);
+
+                repeat.StateCommon.Border.Color1 = Color.FromArgb(231, 41, 58);
+                repeat.StateCommon.Border.Color2 = Color.FromArgb(231, 41, 58);
+
+                _validate = false;
+
+                MessageAlert("Mot de passe différent", true);
+            }
+
         }
 
         
